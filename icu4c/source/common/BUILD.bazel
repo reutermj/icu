@@ -40,5 +40,5 @@ cc_library(
     local_defines = [
         "U_COMMON_IMPLEMENTATION",
     ],
-    linkopts = [""-DEFAULTLIB:advapi32.lib""],
+    linkopts = ["-DEFAULTLIB:advapi32.lib"],
 )
