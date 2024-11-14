@@ -1,4 +1,4 @@
-https://github.com/unicode-org/icu/blob/main/icu4c/source/common/ucnv_bld.cpp# © 2021 and later: Unicode, Inc. and others.
+# © 2021 and later: Unicode, Inc. and others.
 # License & terms of use: http://www.unicode.org/copyright.html
 
 # This file defines Bazel targets for a subset of ICU4C "common" library header and source files.
