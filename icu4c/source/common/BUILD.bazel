@@ -51,6 +51,7 @@ cc_library(
         "uinvchar.cpp",
         "charstr.cpp",
         "unistr.cpp",
+        "unistr_cnv.cpp",
         "appendable.cpp",
         "stringpiece.cpp",
         "ustrtrns.cpp",
