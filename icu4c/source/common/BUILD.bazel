@@ -40,5 +40,6 @@ cc_library(
     local_defines = [
         "U_COMMON_IMPLEMENTATION",
     ],
+    deps = ["//icu4c/source/stubdata"],
     linkopts = ["-DEFAULTLIB:advapi32.lib"],
 )
