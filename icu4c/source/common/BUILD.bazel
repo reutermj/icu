@@ -21,7 +21,7 @@ package(
 # https://stackoverflow.com/q/66111709/2077918 .
 
 cc_library(
-    name = "common",
+    name = "headers",
     hdrs = glob([
         "unicode/*.h", # public
         "*.h",         # internal
@@ -31,7 +31,6 @@ cc_library(
         # Same list of .h files as in icu4c/source/data/unidata/clean.sh.
         exclude = ["norm2_nfc_data.h", "propname_data.h", "*_props_data.h"],
     ),
-    srcs = glob(["*.c", "*.cpp"]),
     # We need to add includes in order to preserve existing source files'
     # include directives that use traditional paths, not paths relative to
     # Bazel workspace:
@@ -40,6 +39,15 @@ cc_library(
     local_defines = [
         "U_COMMON_IMPLEMENTATION",
     ],
-    deps = ["//icu4c/source/stubdata"],
+)
+
+cc_library(
+    name = "common",
+    srcs = glob(["*.c", "*.cpp"]),
+    includes = ["."],
+    local_defines = [
+        "U_COMMON_IMPLEMENTATION",
+    ],
+    deps = ["//icu4c/source/stubdata", ":headers"],
     linkopts = ["-DEFAULTLIB:advapi32.lib"],
 )
